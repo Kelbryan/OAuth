@@ -1,9 +1,9 @@
-name: CI
+name: SCA
 on:
  push:
-   branches: [ main ]
+   branches: [ master ]
  pull_request:
-   branches: [ main ]
+   branches: [ master ]
 
 jobs:
  conviso-sast:
@@ -12,9 +12,9 @@ jobs:
      image: convisoappsec/flowcli
      env:
        FLOW_API_KEY:  ${{Ndec6g9VZ0pkbAn5gCgVt2t5BhUyYDtS8BDxUrDpV_Q}}
-       FLOW_PROJECT_CODE: "00xFUoWOm9DtJBXg"
+       FLOW_PROJECT_CODE: ${{00xFUoWOm9DtJBXg}}
    steps:
-   - uses: actions/checkout@v3
+   - uses: actions/checkout@v2
 
    - name: Run SAST
      run: conviso sast run
