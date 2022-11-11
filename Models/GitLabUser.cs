@@ -6,3 +6,4 @@ public class GitLabUser{
     public string Name { get; set; }
     public string State { get; set; }
 }
+password=12345
